@@ -91,6 +91,13 @@ END
     assert validator.valid?
   end
 
+  def test_should_allow_class_as_an_attribute_on_html_tag_for_html5
+    html = SAMPLE.call(:html_options => 'class="wibble"',
+                       :content      => "")
+    validator = AssertValidHtml::Validator.new(html)
+    assert validator.valid?
+  end
+
   def test_should_show_five_lines_of_context_on_each_side_of_error
     lines = ["1", "2", "3", "4", "5", "6 &illegal", "7", "8", "9", "10", "11"]
     html = SAMPLE.call(:content => lines.join("\n"))

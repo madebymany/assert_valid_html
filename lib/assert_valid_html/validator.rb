@@ -10,7 +10,7 @@ module AssertValidHtml
       novalidate formaction formenctype formmethod formnovalidate formtarget
       type label contextmenu scoped async manifest sizes reversed sandbox
       seamless srcdoc contenteditable draggable hidden role data-\\S* aria-\\S*
-      spellcheck
+      spellcheck class
     ]
 
     ALLOWED_ELEMENTS = %w[
